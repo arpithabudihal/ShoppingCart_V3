@@ -1,0 +1,35 @@
+{
+  "channel": {
+    "name": "Telesales"
+  },
+  "contactMedium": [
+    {
+      "characteristic": {
+        "city": "Pune",
+        "country": "India"
+      },
+      "mediumType": "email",
+      "preferred": true
+    }
+  ],
+  "offerContainer": [
+    {
+      "cartItem": [
+        {
+          "action": "add",
+          "quantity": 2,
+          "productOffering": {
+            "id": "bm-airtel-black"
+          }
+        }
+      ],
+      "category": {
+        "id": "bm-mobile"
+      },
+      "processContext": "ACQ"
+    }
+  ],
+  "place": {
+    "name": "Pune"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "channel": {
+    "name": "Telesales"
+  },
+  "contactMedium": [
+    {
+      "characteristic": {
+        "city": "Pune",
+        "country": "India"
+      },
+      "mediumType": "email",
+      "preferred": true
+    }
+  ],
+  "offerContainer": [
+    {
+      "cartItem": [
+        {
+          "productOffering": {
+            "id": "mobile_iphone12_ab"
+          }
+        }
+      ],
+      "category": {
+        "id": "ab_auto_mobile"
+      },
+      "processContext": "ACQ"
+    }
+  ],
+  "place": {
+    "name": "Pune"
+  }
+}

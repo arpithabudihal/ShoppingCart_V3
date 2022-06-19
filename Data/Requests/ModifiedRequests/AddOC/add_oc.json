@@ -1,0 +1,17 @@
+{
+  "offerContainer": [
+    {
+      "cartItem": [
+        {
+          "productOffering": {
+            "id": "bm-airtel-black"
+          }
+        }
+      ],
+      "category": {
+        "id": "bm-mobile"
+      },
+      "processContext": "ACQ"
+    }
+  ]
+}

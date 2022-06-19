@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220617 17:46:13.789" rpa="false" schemaversion="3">
+<suite id="s1" name="AddNote" source="D:\Automation_Projects\ShoppingCart_V3\TestingFolder\Notes\AddNote.robot">
+<test id="s1-t1" name="TC1-Add Note To OC" line="8">
+<kw name="KW-Add Note On OfferContainer" library="AddNoteKW">
+<kw name="KW-Create ShoppingCart With OfferContainer" library="CreateShoppingCartKW">
+<var>${shoppingCartID}</var>
+<var>${OCID}</var>
+<tag>Create SC</tag>
+<kw name="Create ShoppingCart with OC and CI" library="CreateShoppingCart">
+<var>${response}</var>
+<arg>${create_sc_json}</arg>
+<msg timestamp="20220617 17:46:18.341" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220617 17:46:16.878" endtime="20220617 17:46:18.341"/>
+</kw>
+<kw name="Check ShoppingCart ID" library="CreateSCValidator">
+<var>${sc_id}</var>
+<arg>${response}</arg>
+<msg timestamp="20220617 17:46:20.353" level="INFO" html="true">Shopping Cart Created Successfully with ID: 9b3f3497-9cdf-4eb4-beb1-36a0e061d723</msg>
+<msg timestamp="20220617 17:46:20.353" level="INFO">${sc_id} = 9b3f3497-9cdf-4eb4-beb1-36a0e061d723</msg>
+<status status="PASS" starttime="20220617 17:46:18.341" endtime="20220617 17:46:20.353"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>ShoppingCart ID is:${sc_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220617 17:46:20.353" endtime="20220617 17:46:20.353"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${sc_id}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220617 17:46:20.355" level="INFO">Length is 36</msg>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Check OC Count" library="CreateSCValidator">
+<var>${oc_count}</var>
+<arg>${response}</arg>
+<msg timestamp="20220617 17:46:20.355" level="INFO">${oc_count} = 1</msg>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${1}</arg>
+<arg>${oc_count}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Check OC ID" library="CreateSCValidator">
+<var>${oc_ids}</var>
+<arg>${response}</arg>
+<msg timestamp="20220617 17:46:20.355" level="INFO">${oc_ids} = ['3f531e69-b95c-4422-9861-b18dd4021a05']</msg>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${oc_ids[0]}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220617 17:46:20.355" level="INFO">Length is 36</msg>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>OfferContainer ID is:${oc_ids[0]}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Check CartItem ID" library="CreateSCValidator">
+<var>${cartitem_id}</var>
+<arg>${response}</arg>
+<msg timestamp="20220617 17:46:20.355" level="INFO">${cartitem_id} = 7b2ee705-19ba-4cbb-97e4-df1136a2c971</msg>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>CartItem ID is:${cartitem_id}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${cartitem_id}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220617 17:46:20.355" level="INFO">Length is 36</msg>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:20.355"/>
+</kw>
+<msg timestamp="20220617 17:46:20.355" level="INFO">${shoppingCartID} = 9b3f3497-9cdf-4eb4-beb1-36a0e061d723</msg>
+<msg timestamp="20220617 17:46:20.355" level="INFO">${OCID} = ['3f531e69-b95c-4422-9861-b18dd4021a05']</msg>
+<status status="PASS" starttime="20220617 17:46:16.878" endtime="20220617 17:46:20.355"/>
+</kw>
+<kw name="Note On Offer Container" library="Notes">
+<var>${response}</var>
+<arg>${note_oc_json}</arg>
+<arg>${shoppingCartID}</arg>
+<arg>${OCID[0]}</arg>
+<msg timestamp="20220617 17:46:21.570" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220617 17:46:20.355" endtime="20220617 17:46:21.570"/>
+</kw>
+<kw name="Is Notes Added" library="Notes_Validator">
+<var>${note_id}</var>
+<arg>${response}</arg>
+<msg timestamp="20220617 17:46:21.570" level="INFO" html="true">Note added Successfully with Note ID: ee9ef932-0765-42fc-9d1d-1149ddeb9859</msg>
+<msg timestamp="20220617 17:46:21.570" level="INFO">${note_id} = ee9ef932-0765-42fc-9d1d-1149ddeb9859</msg>
+<status status="PASS" starttime="20220617 17:46:21.570" endtime="20220617 17:46:21.570"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${note_id}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20220617 17:46:21.570" level="INFO">Length is 36</msg>
+<status status="PASS" starttime="20220617 17:46:21.570" endtime="20220617 17:46:21.570"/>
+</kw>
+<status status="PASS" starttime="20220617 17:46:16.878" endtime="20220617 17:46:21.570"/>
+</kw>
+<tag>Create SC</tag>
+<status status="PASS" starttime="20220617 17:46:16.876" endtime="20220617 17:46:21.570"/>
+</test>
+<status status="PASS" starttime="20220617 17:46:13.794" endtime="20220617 17:46:21.570"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Create SC</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="AddNote">AddNote</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
